@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agenda</string>
+    <string name="app_name">ProdutoCP</string>
     <string name="search_hint">Buscar produto</string>
     <string name="title_activity_detalhe">Novo produto</string>
 </resources>

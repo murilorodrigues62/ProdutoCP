@@ -86,7 +86,7 @@ public class ProdutoProvider extends ContentProvider {
             case PRODUTOS_ID:
                 return Produtos.CONTENT_ITEM_TYPE;
             default:
-                throw new IllegalArgumentException("Unknown type ");
+                throw new IllegalArgumentException("URI desconhecida");
         }
     }
 
@@ -101,7 +101,7 @@ public class ProdutoProvider extends ContentProvider {
                 id=database.insert(SQLiteHelper.DATABASE_TABLE, null, values);
                 break;
             default:
-                throw new IllegalArgumentException("Unknown URI");
+                throw new IllegalArgumentException("URI desconhecida");
 
         }
         uri = ContentUris.withAppendedId(uri, id);
@@ -124,7 +124,7 @@ public class ProdutoProvider extends ContentProvider {
                 break;
 
             default:
-                throw new IllegalArgumentException("Unknown URI");
+                throw new IllegalArgumentException("URI desconhecida");
         }
         database.close();
         return count;
@@ -140,12 +140,8 @@ public class ProdutoProvider extends ContentProvider {
             public static final String CONTENT_TYPE= "vnd.android.cursor.dir/vnd.br.edu.ifspsaocarlos.produtocp.produtos";
             public static final String CONTENT_ITEM_TYPE= "vnd.android.cursor.item/vnd.br.edu.ifspsaocarlos.produtocp.produtos";
 
-
             public static final String KEY_ID = "id";
             public static final String KEY_DESC = "descricao";
             public static final String KEY_PRECO = "preco";
     }
-
-
-
 }

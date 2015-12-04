@@ -21,6 +21,7 @@ public class DetalheActivity extends AppCompatActivity {
     Uri uriProd= ProdutoProvider.Produtos.CONTENT_URI;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +38,7 @@ public class DetalheActivity extends AppCompatActivity {
             EditText precoText = (EditText)findViewById(R.id.editText2);
             precoText.setText(p.getPreco());
 
-            int pos =p.getDescricao().indexOf(" ");
-            if (pos==-1)
-                pos=p.getDescricao().length();
-            setTitle(p.getDescricao().substring(0, pos));
+            setTitle(p.getDescricao());
         }
 
     }
